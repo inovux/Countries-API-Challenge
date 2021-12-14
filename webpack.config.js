@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -12,13 +12,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
                         presets: [
                             ['@babel/preset-env', { targets: 'defaults' }],
+                            ['@babel/preset-react'],
                         ],
                     },
                 },
@@ -30,5 +31,9 @@ module.exports = {
         static: './dist',
         port: 1337,
     },
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/public/index.html',
+        }),
+    ],
 }
