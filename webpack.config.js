@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
     entry: './src/index.jsx',
     output: {
         filename: 'bundle.js',
@@ -19,7 +22,7 @@ module.exports = {
                     options: {
                         presets: [
                             ['@babel/preset-env', { targets: 'defaults' }],
-                            ['@babel/preset-react'],
+                            ['@babel/preset-react', { runtime: 'automatic' }],
                         ],
                     },
                 },
