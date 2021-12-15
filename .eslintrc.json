@@ -4,6 +4,7 @@
         "es2021": true
     },
     "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -18,7 +19,7 @@
             }
         }
     },
-    "plugins": ["react", "prettier"],
+    "plugins": ["react", "prettier", "@typescript-eslint"],
     "rules": {
         "prettier/prettier": "error",
         "import/prefer-default-export": "off",
@@ -34,6 +35,7 @@
                 "ts": "never",
                 "tsx": "never"
             }
-        ]
+        ],
+        "react/prop-types": "off"
     }
 }
