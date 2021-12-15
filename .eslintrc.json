@@ -11,12 +11,29 @@
         "ecmaVersion": 13,
         "sourceType": "module"
     },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
     "plugins": ["react", "prettier"],
     "rules": {
         "prettier/prettier": "error",
         "import/prefer-default-export": "off",
         "react/function-component-definition": "off",
         "arrow-body-style": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": "off",
+        "import/extensions": [
+            "error",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
     }
 }
