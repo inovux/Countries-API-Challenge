@@ -13,7 +13,7 @@
         "prettier": "prettier \"**/*.+(js|json)\" --ignore-path .gitignore",
         "format": "yarn prettier --write",
         "check-format": "yarn prettier --list-different",
-        "validate": "yarn check-format & yarn lint"
+        "validate": "yarn check-format & yarn lint & yarn tsc"
     },
     "devDependencies": {
         "@babel/core": "^7.16.5",
