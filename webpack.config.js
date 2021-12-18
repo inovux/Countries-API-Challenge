@@ -6,7 +6,7 @@ const loadPresets = require('./build-utils/loadPresets')
 // eslint-disable-next-line global-require,import/no-dynamic-require
 const modeConfig = (mode) => require(`./build-utils/webpack.${mode}`)(mode)
 
-module.exports = ({ preset }, { mode }) => {
+module.exports = ({ preset = '' }, { mode }) => {
     return merge(
         {
             mode,
