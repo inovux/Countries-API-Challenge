@@ -6,9 +6,9 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "webpack": "webpack",
+        "webpack:analyze": "webpack --mode production --env preset=analyze",
         "start": "webpack serve --mode development --open",
-        "build": "webpack -- --mode production",
+        "build": "webpack --mode production",
         "postinstall": "husky install",
         "test": "echo 'this will run tests later'",
         "lint": "eslint --ext .js . --ignore-path .gitignore",
@@ -47,6 +47,7 @@
         "style-loader": "^3.3.1",
         "typescript": "^4.5.4",
         "webpack": "^5.65.0",
+        "webpack-bundle-analyzer": "^4.5.0",
         "webpack-cli": "^4.9.1",
         "webpack-dev-server": "^4.6.0",
         "webpack-merge": "^5.8.0"
