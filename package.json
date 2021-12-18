@@ -12,7 +12,7 @@
         "postinstall": "husky install",
         "test": "echo 'this will run tests later'",
         "lint": "eslint --ext .js . --ignore-path .gitignore",
-        "prettier": "prettier \"**/*.+(js|json)\" --ignore-path .gitignore",
+        "prettier": "prettier \"**/*.+(js|jsx|json|ts|tsx)\" --ignore-path .gitignore",
         "format": "yarn prettier --write",
         "check-format": "yarn prettier --list-different",
         "validate": "yarn check-format && yarn lint && yarn tsc"
@@ -29,6 +29,7 @@
         "@typescript-eslint/eslint-plugin": "^5.7.0",
         "@typescript-eslint/parser": "^5.7.0",
         "babel-loader": "^8.2.3",
+        "compression-webpack-plugin": "^9.2.0",
         "css-loader": "^6.5.1",
         "css-minimizer-webpack-plugin": "^3.3.0",
         "eslint": "^8.4.1",
