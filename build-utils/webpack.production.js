@@ -1,8 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// eslint-disable-next-line import/no-extraneous-dependencies
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-// eslint-disable-next-line import/no-extraneous-dependencies
 const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = () => {
