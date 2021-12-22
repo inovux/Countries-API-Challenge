@@ -14,6 +14,7 @@ module.exports = () => {
                         'css-loader',
                         'postcss-loader',
                     ],
+                    exclude: /\.module.css$/,
                 },
             ],
         },

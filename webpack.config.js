@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { merge } = require('webpack-merge')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const loadPresets = require('./build-utils/loadPresets')
 
 // eslint-disable-next-line global-require,import/no-dynamic-require
@@ -22,15 +23,28 @@ module.exports = ({ preset = '' }, { mode }) => {
             module: {
                 rules: [
                     {
+                        test: /\.module\.css$/,
+                        use: [
+                            MiniCssExtractPlugin.loader,
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    importLoaders: 1,
+                                    modules: true,
+                                },
+                            },
+                            'postcss-loader',
+                        ],
+                    },
+                    {
                         test: /\.tsx?$/,
                         exclude: /node_modules/,
-                        use: {
-                            loader: 'babel-loader',
-                        },
+                        use: 'babel-loader',
                     },
                 ],
             },
             plugins: [
+                new MiniCssExtractPlugin(),
                 new HtmlWebpackPlugin({
                     template: './src/public/index.html',
                 }),
