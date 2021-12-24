@@ -1,5 +1,14 @@
-import { Hello } from './components/Hello'
+import { Card } from './components/Card'
 
 export const App = () => {
-    return <Hello text="Hello" />
+    return (
+        <div>
+            <Card
+                country="The Netherlands"
+                population={20000000}
+                region="Utrecht"
+                capital="Amsterdam"
+            />
+        </div>
+    )
 }
