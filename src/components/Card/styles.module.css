@@ -1,0 +1,23 @@
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.textContainer {
+    padding: 20px;
+    background-color: var(--dark-blue-1)
+}
+
+h2 {
+    margin: 0;
+    padding: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+    padding: 5px 0;
+}
