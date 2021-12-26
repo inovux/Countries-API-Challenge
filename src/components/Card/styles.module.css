@@ -3,11 +3,18 @@
     flex-direction: column;
     font-size: 14px;
     color: var(--white);
+    background-color: var(--dark-blue-1);
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .textContainer {
     padding: 20px;
-    background-color: var(--dark-blue-1)
+}
+
+.flag {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 h2 {
