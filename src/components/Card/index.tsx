@@ -5,15 +5,22 @@ interface ICard {
     population: number
     region: string
     capital: string
+    flagUrl: string
 }
 
-export const Card = ({ country, population, region, capital }: ICard) => {
+export const Card = ({
+    country,
+    population,
+    region,
+    capital,
+    flagUrl,
+}: ICard) => {
     return (
         <div className={styles.container}>
             <img
                 className={styles.flag}
-                src="https://flagcdn.com/w320/nl.png"
-                alt="country flag"
+                src={flagUrl}
+                alt={`${country} flag`}
             />
             <div className={styles.textContainer}>
                 <h2>{country}</h2>

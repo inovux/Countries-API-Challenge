@@ -8,6 +8,7 @@ export const App = () => {
                 population={20000000}
                 region="Utrecht"
                 capital="Amsterdam"
+                flagUrl="https://flagcdn.com/w320/nl.png"
             />
         </div>
     )
