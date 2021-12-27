@@ -1,4 +1,5 @@
 import styles from './styles.module.css'
+import { numberFormatter } from '../../utils/numberFormatter'
 
 interface ICard {
     country: string
@@ -24,7 +25,7 @@ export const Card = ({
             />
             <div className={styles.textContainer}>
                 <h2>{country}</h2>
-                <p>Population: {population}</p>
+                <p>Population: {numberFormatter(population, 0)}</p>
                 <p>Region: {region}</p>
                 <p>Capital: {capital}</p>
             </div>
