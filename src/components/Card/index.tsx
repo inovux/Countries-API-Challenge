@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 import { numberFormatter } from '../../utils/numberFormatter'
 
-interface ICard {
+export interface ICard {
     country: string
     population: number
     region: string
