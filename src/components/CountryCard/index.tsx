@@ -1,7 +1,7 @@
-import styles from './Card.module.css'
+import styles from './CountryCard.module.css'
 import { numberFormatter } from '../../utils/numberFormatter'
 
-export interface ICard {
+export interface ICountry {
     country: string
     population: number
     region: string
@@ -15,7 +15,7 @@ export const Card = ({
     region,
     capital,
     flagUrl,
-}: ICard) => {
+}: ICountry) => {
     return (
         <div className={styles.container}>
             <img

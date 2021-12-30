@@ -1,6 +1,6 @@
-import { CardList } from './components/CardList'
+import { CountryCardList } from './components/CountryCardList'
 
-const cards = [
+const countries = [
     {
         country: 'The Netherlands',
         population: 20000000,
@@ -34,7 +34,7 @@ const cards = [
 export const App = () => {
     return (
         <div>
-            <CardList cards={cards} />
+            <CountryCardList countries={countries} />
         </div>
     )
 }
