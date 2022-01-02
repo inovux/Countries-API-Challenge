@@ -15,6 +15,8 @@ Select API:
 - Select box should open on the selected value in the list (placeholder or current value).
 - Add support for dropdown not being out of the view of the browser
 
+Select holds the state of the current selected option (value). The Select.Option component should have an internal "selected" property that is active when the value inside Select is the same as the Select.Option value. When the Select.Option is selected the list should start from that item's position whenever the dropdown opens up. It should also show the label of the selected option when the dropdown is closed as it is the selected value.
+
  */
 
 interface ISelect {
