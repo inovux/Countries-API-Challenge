@@ -17,6 +17,13 @@ Select API:
 
 Select holds the state of the current selected option (value). The Select.Option component should have an internal "selected" property that is active when the value inside Select is the same as the Select.Option value. When the Select.Option is selected the list should start from that item's position whenever the dropdown opens up. It should also show the label of the selected option when the dropdown is closed as it is the selected value.
 
+Options and Select component should be connected using the context API. The Option component can be in a separate file using the created Select context's onChange and value properties (Basic Compound component).
+
+SelectContextProperties: {
+    value: string,
+    onChange: (e) => string
+}
+
  */
 
 interface ISelect {
