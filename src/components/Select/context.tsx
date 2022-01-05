@@ -1,3 +1,4 @@
 import { createContext } from 'react'
 
-export const SelectContext = createContext({})
+// Add correct types for SelectContext
+export const SelectContext = createContext<any>(null)

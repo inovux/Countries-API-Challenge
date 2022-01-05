@@ -26,7 +26,7 @@ SelectContextProperties: {
 
  */
 
-import { memo, useMemo, useState } from 'react'
+import { FC, memo } from 'react'
 import { SelectContext } from './context'
 
 interface ISelect {
@@ -34,20 +34,25 @@ interface ISelect {
     placeholder: string
 }
 
-export const Select = memo(({ initialValue, placeholder }: ISelect) => {
-    const [selectedValue, setSelectedValue] = useState(initialValue)
+export const Select: FC<ISelect> = memo(
+    ({ initialValue, placeholder, children }) => {
+        // const [selectedValue, setSelectedValue] = useState(initialValue)
 
-    const value = useMemo(
-        () => ({
-            value: selectedValue,
-            onChange: setSelectedValue,
-        }),
-        [selectedValue]
-    )
+        // const value = useMemo(
+        //     () => ({
+        //         value: selectedValue,
+        //         onChange: setSelectedValue,
+        //     }),
+        //     [selectedValue]
+        // )
 
-    return (
-        <SelectContext.Provider value={value}>
-            Select Component {value} {placeholder}
-        </SelectContext.Provider>
-    )
-})
+        console.log(initialValue, placeholder)
+
+        // TODO: Implement value for SelectContext provider
+        return (
+            <SelectContext.Provider value="abc">
+                {children}
+            </SelectContext.Provider>
+        )
+    }
+)

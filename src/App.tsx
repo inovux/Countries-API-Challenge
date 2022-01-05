@@ -1,4 +1,6 @@
 import { CountryCardList } from './components/CountryCardList'
+import { Option } from './components/Select/Option'
+import { Select } from './components/Select'
 
 const countries = [
     {
@@ -35,6 +37,9 @@ export const App = () => {
     return (
         <div>
             <CountryCardList countries={countries} />
+            <Select initialValue="value" placeholder="My placeholder">
+                <Option value="ello" label="ELLO" />
+            </Select>
         </div>
     )
 }
