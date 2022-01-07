@@ -37,10 +37,7 @@ export const App = () => {
     return (
         <div>
             <CountryCardList countries={countries} />
-            <Select
-                initialValue={{ value: 'name', label: 'Name' }}
-                placeholder="My placeholder"
-            >
+            <Select placeholder="Please select something...">
                 <Option value="ello" label="ELLO" />
             </Select>
         </div>

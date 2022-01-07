@@ -31,25 +31,27 @@ import { SelectContext } from './context'
 import { IOption } from './Option'
 
 interface ISelect {
-    initialValue: IOption
+    initialValue?: IOption
     placeholder: string
 }
 
-export const Select: FC<ISelect> = memo(({ initialValue, children }) => {
-    const [selectedValue] = useState(initialValue)
+export const Select: FC<ISelect> = memo(
+    ({ placeholder, initialValue = null, children }) => {
+        const [selectedValue] = useState(initialValue)
 
-    const value = useMemo(
-        () => ({
-            value: selectedValue,
-        }),
-        [selectedValue]
-    )
+        const value = useMemo(
+            () => ({
+                value: selectedValue,
+            }),
+            [selectedValue]
+        )
 
-    // TODO: Implement value for SelectContext provider
-    return (
-        <SelectContext.Provider value={value}>
-            {selectedValue.label}
-            {children}
-        </SelectContext.Provider>
-    )
-})
+        // TODO: Implement value for SelectContext provider
+        return (
+            <SelectContext.Provider value={value}>
+                {selectedValue ? selectedValue.label : placeholder}
+                {children}
+            </SelectContext.Provider>
+        )
+    }
+)

@@ -2,7 +2,7 @@ import { createContext } from 'react'
 import { IOption } from './Option'
 
 interface ISelectContext {
-    value: IOption
+    value: IOption | null
 }
 
 // Add correct types for SelectContext
