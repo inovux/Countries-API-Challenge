@@ -12,7 +12,7 @@ interface ISelect {
 export const Select: FC<ISelect> = memo(
     ({ placeholder, initialValue = null, children }) => {
         const [isOpen, setIsOpen] = useState(false)
-        const [selectedValue] = useState(initialValue)
+        const [selectedValue, setSelectedValue] = useState(initialValue)
 
         const handleIsOpen = useCallback(() => {
             setIsOpen((isOpenState) => {
@@ -24,6 +24,7 @@ export const Select: FC<ISelect> = memo(
         const value = useMemo(
             () => ({
                 value: selectedValue,
+                onSelect: setSelectedValue,
             }),
             [selectedValue]
         )

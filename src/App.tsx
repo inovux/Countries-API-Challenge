@@ -38,7 +38,13 @@ export const App = () => {
         <div>
             <CountryCardList countries={countries} />
             <Select placeholder="Please select something...">
-                <Option value="ello" label="ELLO" />
+                <Option label="Africa" value="africa" />
+                <Option label="Antarctica" value="antarctica" />
+                <Option label="Asia" value="asia" />
+                <Option label="Europe" value="europe" />
+                <Option label="North America" value="north-america" />
+                <Option label="Oceania" value="oceania" />
+                <Option label="South America" value="south-america" />
             </Select>
         </div>
     )

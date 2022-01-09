@@ -8,11 +8,13 @@ export interface IOption {
 export const Option = ({ value, label }: IOption) => {
     const selectContext = useSelectContext()
 
-    console.log(selectContext)
+    const handleClick = () => {
+        selectContext.onSelect({ value, label })
+    }
 
+    // TODO: Fix role here should be "button" with additional changes
     return (
-        <div>
-            {value}
+        <div role="presentation" onClick={handleClick}>
             {label}
         </div>
     )
