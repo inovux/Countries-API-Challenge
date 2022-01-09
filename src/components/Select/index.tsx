@@ -2,6 +2,8 @@ import { FC, memo, useCallback, useMemo, useState } from 'react'
 import { SelectContext } from './context'
 import { IOption } from './Option'
 
+import styles from './Select.module.css'
+
 interface ISelect {
     initialValue?: IOption
     placeholder: string
@@ -29,7 +31,11 @@ export const Select: FC<ISelect> = memo(
         /* TODO: role should be fixed here and changed to button with necessary changes */
         return (
             <SelectContext.Provider value={value}>
-                <div role="presentation" onClick={handleIsOpen}>
+                <div
+                    className={styles.container}
+                    role="presentation"
+                    onClick={handleIsOpen}
+                >
                     {selectedValue ? selectedValue.label : placeholder}
                     {isOpen && children}
                 </div>

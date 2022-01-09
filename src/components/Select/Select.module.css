@@ -1,0 +1,6 @@
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    cursor: pointer;
+    user-select: none;
+}
