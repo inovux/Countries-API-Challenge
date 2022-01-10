@@ -4,7 +4,7 @@
     font-size: 14px;
     color: var(--white);
     background-color: var(--dark-blue-1);
-    border-radius: 5px;
+    border-radius: var(--radiusBase);
     box-sizing: border-box;
 }
 
