@@ -32,13 +32,19 @@ export const Select: FC<ISelect> = memo(
         /* TODO: role should be fixed here and changed to button with necessary changes */
         return (
             <SelectContext.Provider value={value}>
-                <div
-                    className={styles.container}
-                    role="presentation"
-                    onClick={handleIsOpen}
-                >
-                    {selectedValue ? selectedValue.label : placeholder}
-                    {isOpen && children}
+                <div className={styles.container}>
+                    <div
+                        className={styles.selectContainer}
+                        role="presentation"
+                        onClick={handleIsOpen}
+                    >
+                        {selectedValue ? selectedValue.label : placeholder}
+                    </div>
+                    {isOpen && (
+                        <div className={styles.optionsContainer}>
+                            {children}
+                        </div>
+                    )}
                 </div>
             </SelectContext.Provider>
         )

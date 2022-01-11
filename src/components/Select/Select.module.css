@@ -1,4 +1,9 @@
 .container {
+    position: relative;
+}
+
+.selectContainer {
+    position: relative;
     display: inline-flex;
     flex-direction: column;
     cursor: pointer;
@@ -7,5 +12,14 @@
     padding: var(--paddingBase) calc(var(--paddingBase) * 1.2);
     border-radius: var(--radiusBase);
     box-shadow: var(--shadowBase-light);
-    margin: var(--paddingBase);
+}
+
+.optionsContainer {
+    position: absolute;
+    background-color: var(--white);
+    padding: var(--paddingBase) calc(var(--paddingBase) * 1.2);
+    box-shadow: var(--shadowBase-light);
+    left: 0;
+    /* calculated position from top based on padding top and bottom + 2 px border + font-size */
+    top: calc(((var(--paddingBase) * 2) + 2px + 1em) + 6px);
 }
