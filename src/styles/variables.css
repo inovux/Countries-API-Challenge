@@ -6,6 +6,7 @@
     --medium-gray: hsl(0, 0%, 85%);
     --light-gray: hsl(0, 0%, 98%);
     --white: hsl(0, 0%, 100%);
-    --paddingBase: 10px;
+    --paddingBase: 20px;
     --radiusBase: 5px;
+    --shadowBase-light: 1px 1px 10px var(--medium-gray);
 }

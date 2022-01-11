@@ -6,6 +6,8 @@
     background-color: var(--dark-blue-1);
     border-radius: var(--radiusBase);
     box-sizing: border-box;
+    box-shadow: var(--shadowBase-light);
+    margin: 10px;
 }
 
 .textContainer {

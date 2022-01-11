@@ -4,8 +4,8 @@
     cursor: pointer;
     user-select: none;
     border: 1px solid var(--light-gray);
-    padding: var(--paddingBase) calc(var(--paddingBase) * 2);
+    padding: var(--paddingBase) calc(var(--paddingBase) * 1.2);
     border-radius: var(--radiusBase);
-    box-shadow: 1px 1px 10px var(--medium-gray);
+    box-shadow: var(--shadowBase-light);
     margin: var(--paddingBase);
 }
