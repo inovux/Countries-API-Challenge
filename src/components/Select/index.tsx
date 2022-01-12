@@ -7,10 +7,11 @@ import styles from './Select.module.css'
 interface ISelect {
     initialValue?: IOption
     placeholder: string
+    width?: number
 }
 
 export const Select: FC<ISelect> = memo(
-    ({ placeholder, initialValue = null, children }) => {
+    ({ placeholder, initialValue = null, children, width = 200 }) => {
         const [isOpen, setIsOpen] = useState(false)
         const [selectedValue, setSelectedValue] = useState(initialValue)
 
@@ -37,11 +38,15 @@ export const Select: FC<ISelect> = memo(
                         className={styles.selectContainer}
                         role="presentation"
                         onClick={handleIsOpen}
+                        style={{ width: `${width}px` }}
                     >
                         {selectedValue ? selectedValue.label : placeholder}
                     </div>
                     {isOpen && (
-                        <div className={styles.optionsContainer}>
+                        <div
+                            className={styles.optionsContainer}
+                            style={{ width: `${width}px` }}
+                        >
                             {children}
                         </div>
                     )}

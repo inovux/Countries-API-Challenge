@@ -19,6 +19,8 @@
     background-color: var(--white);
     padding: var(--paddingBase) calc(var(--paddingBase) * 1.2);
     box-shadow: var(--shadowBase-light);
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radiusBase);
     left: 0;
     /* calculated position from top based on padding top and bottom + 2 px border + font-size */
     top: calc(((var(--paddingBase) * 2) + 2px + 1em) + 6px);
