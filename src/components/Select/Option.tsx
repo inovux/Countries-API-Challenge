@@ -1,4 +1,5 @@
 import { useSelectContext } from '../../utils/hooks'
+import styles from './Option.module.css'
 
 export interface IOption {
     value: string
@@ -14,7 +15,11 @@ export const Option = ({ value, label }: IOption) => {
 
     // TODO: Fix role here should be "button" with additional changes
     return (
-        <div role="presentation" onClick={handleClick}>
+        <div
+            className={styles.container}
+            role="presentation"
+            onClick={handleClick}
+        >
             {label}
         </div>
     )
