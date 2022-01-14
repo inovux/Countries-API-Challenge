@@ -26,8 +26,9 @@ export const Select: FC<ISelect> = memo(
             () => ({
                 value: selectedValue,
                 onSelect: setSelectedValue,
+                width,
             }),
-            [selectedValue]
+            [selectedValue, width]
         )
 
         /* TODO: role should be fixed here and changed to button with necessary changes */
@@ -43,10 +44,7 @@ export const Select: FC<ISelect> = memo(
                         {selectedValue ? selectedValue.label : placeholder}
                     </div>
                     {isOpen && (
-                        <div
-                            className={styles.optionsContainer}
-                            style={{ width: `${width}px` }}
-                        >
+                        <div className={styles.optionsContainer}>
                             {children}
                         </div>
                     )}

@@ -1,6 +1,7 @@
 .container {
     cursor: pointer;
     padding: var(--paddingBase) calc(var(--paddingBase) * 1.2);
+    user-select: none;
 }
 
 .container:hover {
