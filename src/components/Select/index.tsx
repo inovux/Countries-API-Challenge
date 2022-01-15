@@ -17,15 +17,21 @@ export const Select: FC<ISelect> = memo(
 
         const handleIsOpen = useCallback(() => {
             setIsOpen((isOpenState) => {
-                console.log(isOpenState)
                 return !isOpenState
             })
         }, [])
 
+        const handleSelect = ({ label, value }: IOption) => {
+            if (value !== selectedValue?.value) {
+                setIsOpen(false)
+                setSelectedValue({ label, value })
+            }
+        }
+
         const value = useMemo(
             () => ({
                 value: selectedValue,
-                onSelect: setSelectedValue,
+                onSelect: handleSelect,
                 width,
             }),
             [selectedValue, width]
