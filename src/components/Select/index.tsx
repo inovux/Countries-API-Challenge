@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useMemo, useState } from 'react'
+import { FC, memo, useEffect, useMemo, useRef, useState } from 'react'
 import { SelectContext } from './context'
 import { IOption } from './Option'
 
@@ -15,10 +15,28 @@ export const Select: FC<ISelect> = memo(
         const [isOpen, setIsOpen] = useState(false)
         const [selectedValue, setSelectedValue] = useState(initialValue)
 
-        const handleIsOpen = useCallback(() => {
+        const selectRef = useRef<HTMLDivElement>(null)
+
+        const handleIsOpen = () => {
             setIsOpen((isOpenState) => {
                 return !isOpenState
             })
+        }
+
+        const handleClickOutside = (event: any) => {
+            if (!selectRef?.current?.contains(event.target)) {
+                setIsOpen(false)
+            }
+        }
+
+        useEffect(() => {
+            document.addEventListener('click', handleClickOutside, {
+                capture: true,
+            })
+
+            return () => {
+                document.removeEventListener('click', handleClickOutside)
+            }
         }, [])
 
         const handleSelect = ({ label, value }: IOption) => {
@@ -40,7 +58,7 @@ export const Select: FC<ISelect> = memo(
         /* TODO: role should be fixed here and changed to button with necessary changes */
         return (
             <SelectContext.Provider value={value}>
-                <div className={styles.container}>
+                <div ref={selectRef} className={styles.container}>
                     <div
                         className={styles.selectContainer}
                         role="presentation"
