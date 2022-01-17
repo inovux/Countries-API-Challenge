@@ -7,3 +7,9 @@
 .container:hover {
     background-color: var(--medium-gray);
 }
+
+.selected,
+.selected:hover {
+    color: var(--white);
+    background-color: var(--dark-blue-1);
+}

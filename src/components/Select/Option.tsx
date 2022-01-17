@@ -7,19 +7,23 @@ export interface IOption {
 }
 
 export const Option = ({ value, label }: IOption) => {
-    const { onSelect, width } = useSelectContext()
+    const selectContext = useSelectContext()
 
     const handleClick = () => {
-        onSelect({ value, label })
+        selectContext.onSelect({ value, label })
     }
 
     // TODO: Fix role here should be "button" with additional changes
     return (
         <div
-            className={styles.container}
+            className={`${styles.container} ${
+                selectContext.value?.value === value
+                    ? styles.selected
+                    : undefined
+            }`}
             role="presentation"
             onClick={handleClick}
-            style={{ width: `${width}px` }}
+            style={{ width: `${selectContext.width}px` }}
         >
             {label}
         </div>
