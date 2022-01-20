@@ -1,4 +1,6 @@
 import { applyMiddleware, compose, createStore } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import { takeEvery } from 'redux-saga/effects'
 
 const composeEnhancers =
     // @ts-ignore
@@ -9,10 +11,23 @@ const composeEnhancers =
           })
         : compose
 
-const middleware: any = []
+function* logMySaga(action: any) {
+    console.log(action)
+    yield action
+}
+
+function* mySaga() {
+    yield takeEvery('LOG_EVENT', logMySaga)
+}
+
+const sagaMiddleware = createSagaMiddleware()
+
+const middleware = [sagaMiddleware]
 
 const enhancer = composeEnhancers(applyMiddleware(...middleware))
 
 export const store = createStore((state = { hello: 'there' }) => {
     return state
 }, enhancer)
+
+sagaMiddleware.run(mySaga)

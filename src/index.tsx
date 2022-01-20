@@ -7,8 +7,6 @@ import { store } from './store'
 import './styles/normalize.css'
 import './styles/variables.css'
 
-console.log(store.getState())
-
 render(
     <Provider store={store}>
         <App />
