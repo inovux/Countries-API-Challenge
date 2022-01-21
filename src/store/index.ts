@@ -1,6 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { takeEvery } from 'redux-saga/effects'
+import { RootState } from './state'
 
 const composeEnhancers =
     // @ts-ignore
@@ -26,7 +27,7 @@ const middleware = [sagaMiddleware]
 
 const enhancer = composeEnhancers(applyMiddleware(...middleware))
 
-export const store = createStore((state = { hello: 'there' }) => {
+export const store = createStore((state = RootState) => {
     return state
 }, enhancer)
 

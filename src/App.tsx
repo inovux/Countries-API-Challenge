@@ -49,12 +49,10 @@ export const App = () => {
                 placeholder="Please select something..."
             >
                 <Option label="Africa" value="africa" />
-                <Option label="Antarctica" value="antarctica" />
+                <Option label="Americas" value="Americas" />
                 <Option label="Asia" value="asia" />
                 <Option label="Europe" value="europe" />
-                <Option label="North America" value="north-america" />
                 <Option label="Oceania" value="oceania" />
-                <Option label="South America" value="south-america" />
             </Select>
         </div>
     )
