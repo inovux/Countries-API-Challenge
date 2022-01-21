@@ -11,9 +11,15 @@ export interface ILanguage {
     nativeName: string
 }
 
+export interface IFlags {
+    svg: string
+    png: string
+}
+
 export interface ICountry {
     capital: string
     currencies: ICurrency[]
+    flags: IFlags
     languages: ILanguage[]
     nativeLanguage: string
     population: number
