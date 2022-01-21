@@ -8,10 +8,11 @@ interface ISelect {
     initialValue?: IOption
     placeholder: string
     width?: number
+    onSelect: (option: IOption) => void
 }
 
 export const Select: FC<ISelect> = memo(
-    ({ placeholder, initialValue = null, children, width = 200 }) => {
+    ({ placeholder, initialValue = null, children, width = 200, onSelect }) => {
         const [isOpen, setIsOpen] = useState(false)
         const [selectedValue, setSelectedValue] = useState(initialValue)
 
@@ -43,6 +44,7 @@ export const Select: FC<ISelect> = memo(
             if (value !== selectedValue?.value) {
                 setIsOpen(false)
                 setSelectedValue({ label, value })
+                onSelect({ label, value })
             }
         }
 

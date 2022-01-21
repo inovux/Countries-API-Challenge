@@ -12,7 +12,7 @@ const composeEnhancers =
         : compose
 
 function* logMySaga(action: any) {
-    console.log(action)
+    console.log(action, 'FROM SAGA')
     yield action
 }
 

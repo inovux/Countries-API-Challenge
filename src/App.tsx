@@ -1,5 +1,6 @@
+import { useDispatch } from 'react-redux'
 import { CountryCardList } from './components/CountryCardList'
-import { Option } from './components/Select/Option'
+import { IOption, Option } from './components/Select/Option'
 import { Select } from './components/Select'
 
 const countries = [
@@ -34,10 +35,19 @@ const countries = [
 ]
 
 export const App = () => {
+    const dispatch = useDispatch()
+
+    const handleSelect = (option: IOption) => {
+        dispatch({ type: 'SELECT', payload: { value: option } })
+    }
+
     return (
         <div>
             <CountryCardList countries={countries} />
-            <Select placeholder="Please select something...">
+            <Select
+                onSelect={handleSelect}
+                placeholder="Please select something..."
+            >
                 <Option label="Africa" value="africa" />
                 <Option label="Antarctica" value="antarctica" />
                 <Option label="Asia" value="asia" />
