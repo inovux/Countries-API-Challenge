@@ -1,15 +1,11 @@
-import { ICountry, ICountryFilter } from '../types'
+import { ICountryFilter } from '../types'
 
 export interface IRootState {
-    countries: ICountry[]
     filters: {
-        countries: ICountryFilter
+        countries?: ICountryFilter
     }
 }
 
 export const RootState: IRootState = {
-    countries: [],
-    filters: {
-        countries: {},
-    },
+    filters: {},
 }
