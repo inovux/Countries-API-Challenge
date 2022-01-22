@@ -1,8 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { takeEvery } from 'redux-saga/effects'
-import { countryReducer } from './countries/reducer'
-import { RootState } from './state'
+import { filtersReducer } from './filters'
 
 const composeEnhancers =
     // @ts-ignore
@@ -28,8 +27,7 @@ const middleware = [sagaMiddleware]
 const enhancer = composeEnhancers(applyMiddleware(...middleware))
 
 export const store = createStore(
-    combineReducers({ filters: countryReducer }),
-    RootState,
+    combineReducers({ filters: filtersReducer }),
     enhancer
 )
 
