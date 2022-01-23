@@ -1,7 +1,8 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { takeEvery } from 'redux-saga/effects'
+import { all } from 'redux-saga/effects'
 import { filtersReducer } from './filters'
+import countrySagas from './countries/saga'
 
 const composeEnhancers =
     // @ts-ignore
@@ -12,12 +13,8 @@ const composeEnhancers =
           })
         : compose
 
-function* logMySaga(action: any) {
-    yield action
-}
-
-function* mySaga() {
-    yield takeEvery('LOG_EVENT', logMySaga)
+function* rootSaga() {
+    yield all([countrySagas()])
 }
 
 const sagaMiddleware = createSagaMiddleware()
@@ -31,4 +28,4 @@ export const store = createStore(
     enhancer
 )
 
-sagaMiddleware.run(mySaga)
+sagaMiddleware.run(rootSaga)
