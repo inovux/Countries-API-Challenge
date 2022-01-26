@@ -7,7 +7,7 @@
     border-radius: var(--radiusBase);
     box-sizing: border-box;
     box-shadow: var(--shadowBase-light);
-    margin: 10px;
+    width: 100%;
 }
 
 .textContainer {
@@ -17,6 +17,8 @@
 .flag {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    height: 200px;
+    width: 100%;
 }
 
 h2 {

@@ -1,22 +1,26 @@
 import { Card, ICountry } from '../CountryCard'
 
+import styles from './CountryCardList.module.css'
+
 interface ICountryCardList {
     countries: ICountry[]
 }
 
 export const CountryCardList = ({ countries }: ICountryCardList) => {
     return (
-        <div>
+        <div className={styles.container}>
             {countries.map((country) => {
                 return (
-                    <Card
-                        country={country.country}
-                        capital={country.capital}
-                        region={country.region}
-                        flagUrl={country.flagUrl}
-                        population={country.population}
-                        key={country.country}
-                    />
+                    <div className={styles.item}>
+                        <Card
+                            country={country.country}
+                            capital={country.capital}
+                            region={country.region}
+                            flagUrl={country.flagUrl}
+                            population={country.population}
+                            key={country.country}
+                        />
+                    </div>
                 )
             })}
         </div>
