@@ -1,3 +1,19 @@
-.container {
+.headerContainer {
     display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 5px solid var(--light-gray);
+}
+
+.contentContainer {
+    display: flex;
+    width: 90%;
+    max-width: 1080px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contentContainer h1 {
+    font-size: 24px;
+    font-weight: 700;
 }
