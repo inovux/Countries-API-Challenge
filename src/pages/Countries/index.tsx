@@ -1,6 +1,11 @@
 import { FC } from 'react'
-import styles from './Countries.module.css'
+// import styles from './Countries.module.css'
+import { PageTemplate } from '../PageTemplate'
 
 export const CountriesPage: FC = () => {
-    return <div className={styles.container}>COUNTRIES</div>
+    return (
+        <PageTemplate>
+            <div>Countries</div>
+        </PageTemplate>
+    )
 }
