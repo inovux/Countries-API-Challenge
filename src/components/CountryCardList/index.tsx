@@ -12,14 +12,16 @@ export const CountryCardList = ({ countries }: ICountryCardList) => {
             {countries.map((country) => {
                 return (
                     <div className={styles.item}>
-                        <Card
-                            country={country.country}
-                            capital={country.capital}
-                            region={country.region}
-                            flagUrl={country.flagUrl}
-                            population={country.population}
-                            key={country.country}
-                        />
+                        <div className={styles.cardContainer}>
+                            <Card
+                                country={country.country}
+                                capital={country.capital}
+                                region={country.region}
+                                flagUrl={country.flagUrl}
+                                population={country.population}
+                                key={country.country}
+                            />
+                        </div>
                     </div>
                 )
             })}
