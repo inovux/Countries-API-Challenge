@@ -1,4 +1,8 @@
-.container {
+.pageContainer {
+    background-color: var(--light-gray);
+}
+
+.contentContainer {
     width: 90%;
     max-width: 1080px;
     margin: 20px auto;

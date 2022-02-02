@@ -4,9 +4,9 @@ import styles from './PageTemplate.module.css'
 
 export const PageTemplate: FC = ({ children }) => {
     return (
-        <div>
+        <div className={styles.pageContainer}>
             <Header />
-            <div className={styles.container}>{children}</div>
+            <div className={styles.contentContainer}>{children}</div>
         </div>
     )
 }

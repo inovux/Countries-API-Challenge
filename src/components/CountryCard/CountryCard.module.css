@@ -2,8 +2,8 @@
     display: inline-flex;
     flex-direction: column;
     font-size: 14px;
-    color: var(--white);
-    background-color: var(--dark-blue-1);
+    color: var(--dark-blue-1);
+    background-color: var(--white);
     border-radius: var(--radiusBase);
     box-sizing: border-box;
     box-shadow: var(--shadowBase-light);
