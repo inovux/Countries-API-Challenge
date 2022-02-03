@@ -2,6 +2,7 @@ import { FC } from 'react'
 // import styles from './Countries.module.css'
 import { PageTemplate } from '../PageTemplate'
 import { CountryCardList } from '../../components/CountryCardList'
+import { ActionBar } from '../../components/ActionBar'
 
 const countries = [
     {
@@ -65,6 +66,7 @@ const countries = [
 export const CountriesPage: FC = () => {
     return (
         <PageTemplate>
+            <ActionBar />
             <CountryCardList countries={countries} />
         </PageTemplate>
     )
