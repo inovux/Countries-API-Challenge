@@ -2,13 +2,14 @@ import { FC } from 'react'
 import { Select } from '../Select'
 import { Option } from '../Select/Option'
 import styles from './ActionBar.module.css'
+import { Search } from '../Search'
 
 interface IActionBar {}
 
 export const ActionBar: FC<IActionBar> = () => {
     return (
         <div className={styles.container}>
-            <div>SEARCH</div>
+            <Search placeholder="Search for a country..." />
             <Select
                 placeholder="Filter by Region"
                 onSelect={() => {
