@@ -9,7 +9,9 @@ interface IActionBar {}
 export const ActionBar: FC<IActionBar> = () => {
     return (
         <div className={styles.container}>
-            <Search placeholder="Search for a country..." />
+            <div className={styles.searchContainer}>
+                <Search placeholder="Search for a country..." />
+            </div>
             <Select
                 placeholder="Filter by Region"
                 onSelect={() => {

@@ -1,4 +1,5 @@
 import { FC, SyntheticEvent, useState } from 'react'
+import styles from './Search.module.css'
 
 interface ISearch {
     initialValue?: string
@@ -21,6 +22,7 @@ export const Search: FC<ISearch> = ({
 
     return (
         <input
+            className={styles.container}
             placeholder={placeholder}
             type="text"
             onChange={handleOnChange}

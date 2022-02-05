@@ -1,0 +1,7 @@
+.container {
+    border: 1px solid var(--light-gray);
+    padding: var(--paddingBase) calc(var(--paddingBase) * 1.2);
+    border-radius: var(--radiusBase);
+    box-shadow: var(--shadowBase-light);
+    width: 100%;
+}
