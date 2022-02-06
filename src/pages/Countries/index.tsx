@@ -64,9 +64,16 @@ const countries = [
 ]
 
 export const CountriesPage: FC = () => {
+    // const dispatch = useDispatch()
+
+    const handleSearch = (value: string) => {
+        // @ts-ignore
+        console.log(value)
+    }
+
     return (
         <PageTemplate>
-            <ActionBar />
+            <ActionBar onSearch={handleSearch} />
             <CountryCardList countries={countries} />
         </PageTemplate>
     )

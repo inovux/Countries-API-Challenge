@@ -4,17 +4,27 @@ import { Option } from '../Select/Option'
 import styles from './ActionBar.module.css'
 import { Search } from '../Search'
 
-interface IActionBar {}
+interface IActionBar {
+    onSearch: (value: string) => void
+}
 
-export const ActionBar: FC<IActionBar> = () => {
+export const ActionBar: FC<IActionBar> = ({ onSearch }) => {
+    const handleSearch = (value: string) => {
+        onSearch(value)
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.searchContainer}>
-                <Search placeholder="Search for a country..." />
+                <Search
+                    onChange={handleSearch}
+                    placeholder="Search for a country..."
+                />
             </div>
             <Select
                 placeholder="Filter by Region"
                 onSelect={() => {
+                    // @ts-ignore
                     console.log('selection')
                 }}
             >
