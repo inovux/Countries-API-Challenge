@@ -1,8 +1,10 @@
 import { FC } from 'react'
 // import styles from './Countries.module.css'
+import { useDispatch } from 'react-redux'
 import { PageTemplate } from '../PageTemplate'
 import { CountryCardList } from '../../components/CountryCardList'
 import { ActionBar } from '../../components/ActionBar'
+import { countryActions } from '../../store/countries/actions'
 
 const countries = [
     {
@@ -64,11 +66,10 @@ const countries = [
 ]
 
 export const CountriesPage: FC = () => {
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     const handleSearch = (value: string) => {
-        // @ts-ignore
-        console.log(value)
+        dispatch(countryActions.setSearch({ search: value }))
     }
 
     return (

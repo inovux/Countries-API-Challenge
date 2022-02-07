@@ -16,6 +16,11 @@ export const countriesFilterReducer = (
                 ...state,
                 region: action.payload.value,
             }
+        case countryActions.setSearch.type:
+            return {
+                ...state,
+                search: action.payload.search,
+            }
         default:
             return state
     }
