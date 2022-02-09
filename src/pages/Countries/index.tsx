@@ -5,6 +5,7 @@ import { PageTemplate } from '../PageTemplate'
 import { CountryCardList } from '../../components/CountryCardList'
 import { ActionBar } from '../../components/ActionBar'
 import { countryActions } from '../../store/countries/actions'
+import { IOption } from '../../components/Select/Option'
 
 const countries = [
     {
@@ -72,9 +73,16 @@ export const CountriesPage: FC = () => {
         dispatch(countryActions.setSearch({ search: value }))
     }
 
+    const handleSelectRegion = (option: IOption) => {
+        dispatch(countryActions.selectRegion(option))
+    }
+
     return (
         <PageTemplate>
-            <ActionBar onSearch={handleSearch} />
+            <ActionBar
+                onSelectRegion={handleSelectRegion}
+                onSearch={handleSearch}
+            />
             <CountryCardList countries={countries} />
         </PageTemplate>
     )
