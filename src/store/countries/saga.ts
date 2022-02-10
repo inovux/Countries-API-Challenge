@@ -1,12 +1,19 @@
-import { all, takeEvery } from 'redux-saga/effects'
+import { all, debounce, takeEvery, select } from 'redux-saga/effects'
 import { AnyAction } from 'redux'
 import { countryActions } from './actions'
+import { countrySelectors } from './selectors'
 
 function* filterRequest(action: AnyAction) {
-    console.log('Do something', action)
+    const state: ReturnType<typeof countrySelectors.filter> = yield select(
+        countrySelectors.filter
+    )
+    console.log(state)
     yield action
 }
 
 export default function* rootSaga() {
-    yield all([takeEvery(countryActions.selectRegion.type, filterRequest)])
+    yield all([
+        takeEvery(countryActions.selectRegion.type, filterRequest),
+        debounce(500, countryActions.setSearch.type, filterRequest),
+    ])
 }
