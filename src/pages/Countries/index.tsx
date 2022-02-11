@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 // import styles from './Countries.module.css'
 import { useDispatch } from 'react-redux'
 import { PageTemplate } from '../PageTemplate'
@@ -6,6 +6,7 @@ import { CountryCardList } from '../../components/CountryCardList'
 import { ActionBar } from '../../components/ActionBar'
 import { countryActions } from '../../store/countries/actions'
 import { IOption } from '../../components/Select/Option'
+import { countriesRequests } from '../../api/countries'
 
 const countries = [
     {
@@ -68,6 +69,10 @@ const countries = [
 
 export const CountriesPage: FC = () => {
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        countriesRequests.getCountries({ yoyo: 15 })
+    }, [])
 
     const handleSearch = (value: string) => {
         dispatch(countryActions.setSearch({ search: value }))
