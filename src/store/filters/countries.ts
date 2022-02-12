@@ -1,10 +1,7 @@
 import { AnyAction } from 'redux'
 import { countryActions } from '../countries/actions'
 
-const initialState = {
-    region: '',
-    search: '',
-}
+const initialState = {}
 
 export const countriesFilterReducer = (
     state = initialState,
