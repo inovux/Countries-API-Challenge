@@ -1,20 +1,10 @@
-import {
-    all,
-    debounce,
-    takeEvery,
-    select,
-    SimpleEffect,
-} from 'redux-saga/effects'
+import { all, debounce, takeEvery, select } from 'redux-saga/effects'
 import { countryActions } from './actions'
 import { countrySelectors } from './selectors'
 import { countriesRequests } from '../../api/countries'
+import { ICountry } from '../../types'
 
-// TODO: Fix types
-function* filterRequest(): Generator<
-    Promise<any> | SimpleEffect<string>,
-    string,
-    any
-> {
+function* filterRequest() {
     const state: ReturnType<typeof countrySelectors.filter> = yield select(
         countrySelectors.filter
     )
@@ -23,11 +13,9 @@ function* filterRequest(): Generator<
         ...state,
     }
 
-    const data = yield countriesRequests.getCountries(params)
+    const data: ICountry[] = yield countriesRequests.getCountries(params)
 
     console.log(data)
-
-    return 'Call another action with given data'
 }
 
 export default function* rootSaga() {
