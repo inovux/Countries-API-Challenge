@@ -11,7 +11,7 @@ export const countryActionsTypes = {
 
 export const countryActions = {
     selectRegion: actionCreator<IOption>(countryActionsTypes.SELECT_REGION),
-    get: actionCreator.async(countryActionsTypes.GET),
+    get: actionCreator.async<any, any, any>(countryActionsTypes.GET),
     setSearch: actionCreator<{ search: string }>(
         countryActionsTypes.SET_SEARCH
     ),
