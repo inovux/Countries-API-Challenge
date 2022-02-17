@@ -1,5 +1,4 @@
 import { FC, useEffect } from 'react'
-// import styles from './Countries.module.css'
 import { useDispatch } from 'react-redux'
 import { PageTemplate } from '../PageTemplate'
 import { CountryCardList } from '../../components/CountryCardList'
