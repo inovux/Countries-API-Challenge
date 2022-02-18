@@ -1,12 +1,29 @@
 .container {
+    position: relative;
+}
+
+.inputContainer {
     border: 2px solid var(--light-gray);
-    padding: var(--paddingBase) calc(var(--paddingBase) * 1.2);
+    padding: var(--paddingBase) calc((var(--paddingBase) * 2) + (20px / 2));
     border-radius: var(--radiusBase);
     box-shadow: var(--shadowBase-light);
     width: 100%;
     outline: 0;
 }
 
-.container:focus {
+.inputContainer::placeholder {
+    color: var(--dark-gray)
+}
+
+.inputContainer:focus {
     border: 2px solid var(--dark-blue-1);
+}
+
+.icon {
+    cursor: text;
+    position: absolute;
+    top: calc(50% - (20px / 2));
+    left: var(--paddingBase);
+    user-select: none;
+    color: var(--dark-gray)
 }
