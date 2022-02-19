@@ -62,7 +62,9 @@ export const Select: FC<ISelect> = memo(
             <SelectContext.Provider value={value}>
                 <div ref={selectRef} className={styles.container}>
                     <div
-                        className={styles.selectContainer}
+                        className={`${styles.selectContainer} ${
+                            isOpen ? styles.active : undefined
+                        }`}
                         role="presentation"
                         onClick={handleIsOpen}
                         style={{ width: `${width}px` }}
