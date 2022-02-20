@@ -23,6 +23,10 @@
     color: var(--dark-gray);
 }
 
+.selected {
+    color: var(--dark-blue-1);
+}
+
 .active {
     border: 2px solid var(--dark-blue-1);
 }

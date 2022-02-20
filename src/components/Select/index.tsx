@@ -66,7 +66,7 @@ export const Select: FC<ISelect> = memo(
                     <div
                         className={`${styles.selectContainer} ${
                             isOpen ? styles.active : undefined
-                        }`}
+                        } ${selectedValue ? styles.selected : undefined}`}
                         role="presentation"
                         onClick={handleIsOpen}
                         style={{ width: `${width}px` }}
@@ -80,7 +80,9 @@ export const Select: FC<ISelect> = memo(
                     )}
                     <FontAwesomeIcon
                         icon={solid('angle-down')}
-                        className={styles.icon}
+                        className={`${styles.icon} ${
+                            isOpen ? styles.selected : undefined
+                        }`}
                     />
                 </div>
             </SelectContext.Provider>
