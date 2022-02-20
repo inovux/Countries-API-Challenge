@@ -9,6 +9,7 @@
     box-shadow: var(--shadowBase-light);
     width: 100%;
     outline: 0;
+    color: var(--dark-blue-1);
 }
 
 .inputContainer::placeholder {
@@ -25,5 +26,5 @@
     top: calc(50% - (20px / 2));
     left: var(--paddingBase);
     user-select: none;
-    color: var(--dark-gray)
+    color: var(--dark-gray);
 }
