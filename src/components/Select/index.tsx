@@ -1,4 +1,6 @@
 import { FC, memo, useEffect, useMemo, useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { SelectContext } from './context'
 import { IOption } from './Option'
 
@@ -76,6 +78,10 @@ export const Select: FC<ISelect> = memo(
                             {children}
                         </div>
                     )}
+                    <FontAwesomeIcon
+                        icon={solid('angle-down')}
+                        className={styles.icon}
+                    />
                 </div>
             </SelectContext.Provider>
         )
