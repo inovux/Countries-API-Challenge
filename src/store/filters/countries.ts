@@ -10,12 +10,12 @@ export const countriesFilterReducer = (
     switch (action.type) {
         case countryActions.selectRegion.type:
             return {
-                ...state,
+                search: undefined,
                 region: action.payload.value,
             }
         case countryActions.setSearch.type:
             return {
-                ...state,
+                region: undefined,
                 search: action.payload.search,
             }
         default:
