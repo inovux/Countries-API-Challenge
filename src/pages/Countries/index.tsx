@@ -1,11 +1,12 @@
 import { FC, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { PageTemplate } from '../PageTemplate'
 import { CountryCardList } from '../../components/CountryCardList'
 import { ActionBar } from '../../components/ActionBar'
 import { countryActions } from '../../store/countries/actions'
 import { IOption } from '../../components/Select/Option'
 import { countriesRequests } from '../../api/countries'
+import { countrySelectors } from '../../store/countries/selectors'
 
 const countries = [
     {
@@ -68,6 +69,7 @@ const countries = [
 
 export const CountriesPage: FC = () => {
     const dispatch = useDispatch()
+    const filter = useSelector(countrySelectors.filter)
 
     useEffect(() => {
         countriesRequests.getCountries({ yoyo: 15 })
@@ -86,6 +88,7 @@ export const CountriesPage: FC = () => {
             <ActionBar
                 onSelectRegion={handleSelectRegion}
                 onSearch={handleSearch}
+                searchValue={filter?.search}
             />
             <CountryCardList countries={countries} />
         </PageTemplate>

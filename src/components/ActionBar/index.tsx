@@ -7,9 +7,14 @@ import { Search } from '../Search'
 interface IActionBar {
     onSearch: (value: string) => void
     onSelectRegion: (option: IOption) => void
+    searchValue?: string
 }
 
-export const ActionBar: FC<IActionBar> = ({ onSearch, onSelectRegion }) => {
+export const ActionBar: FC<IActionBar> = ({
+    onSearch,
+    onSelectRegion,
+    searchValue = '',
+}) => {
     const handleSearch = (value: string) => {
         onSearch(value)
     }
@@ -24,6 +29,7 @@ export const ActionBar: FC<IActionBar> = ({ onSearch, onSelectRegion }) => {
                 <Search
                     onChange={handleSearch}
                     placeholder="Search for a country..."
+                    value={searchValue}
                 />
             </div>
             <Select

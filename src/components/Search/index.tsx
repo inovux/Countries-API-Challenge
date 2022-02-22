@@ -1,26 +1,19 @@
-import { FC, SyntheticEvent, useRef, useState } from 'react'
+import { FC, SyntheticEvent, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import styles from './Search.module.css'
 
 interface ISearch {
-    initialValue?: string
-    onChange?: (value: string) => void
+    value: string
+    onChange: (value: string) => void
     placeholder: string
 }
 
-export const Search: FC<ISearch> = ({
-    initialValue = '',
-    onChange,
-    placeholder,
-}) => {
-    const [value, setValue] = useState(initialValue)
+export const Search: FC<ISearch> = ({ value, onChange, placeholder }) => {
     const inputElement = useRef<HTMLInputElement>(null)
 
     const handleOnChange = (e: SyntheticEvent<HTMLInputElement>) => {
-        onChange?.(e.currentTarget.value)
-
-        setValue(e.currentTarget.value)
+        onChange(e.currentTarget.value)
     }
 
     const handleOnFocus = () => {
