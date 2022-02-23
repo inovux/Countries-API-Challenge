@@ -89,6 +89,7 @@ export const CountriesPage: FC = () => {
                 onSelectRegion={handleSelectRegion}
                 onSearch={handleSearch}
                 searchValue={filter?.search}
+                regionValue={filter?.region}
             />
             <CountryCardList countries={countries} />
         </PageTemplate>

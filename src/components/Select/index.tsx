@@ -11,12 +11,26 @@ interface ISelect {
     placeholder: string
     width?: number
     onSelect: (option: IOption) => void
+    storeValue?: string
 }
 
 export const Select: FC<ISelect> = memo(
-    ({ placeholder, initialValue = null, children, width = 200, onSelect }) => {
+    ({
+        placeholder,
+        initialValue = null,
+        children,
+        storeValue,
+        width = 200,
+        onSelect,
+    }) => {
         const [isOpen, setIsOpen] = useState(false)
         const [selectedValue, setSelectedValue] = useState(initialValue)
+
+        useEffect(() => {
+            if (typeof storeValue === 'undefined') {
+                setSelectedValue(null)
+            }
+        }, [storeValue])
 
         const selectRef = useRef<HTMLDivElement>(null)
 

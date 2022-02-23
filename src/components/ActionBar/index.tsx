@@ -8,12 +8,14 @@ interface IActionBar {
     onSearch: (value: string) => void
     onSelectRegion: (option: IOption) => void
     searchValue?: string
+    regionValue?: string
 }
 
 export const ActionBar: FC<IActionBar> = ({
     onSearch,
     onSelectRegion,
     searchValue = '',
+    regionValue = undefined,
 }) => {
     const handleSearch = (value: string) => {
         onSearch(value)
@@ -35,6 +37,7 @@ export const ActionBar: FC<IActionBar> = ({
             <Select
                 placeholder="Filter by Region"
                 onSelect={handleSelectRegion}
+                storeValue={regionValue}
             >
                 <Option value="africa" label="Africa" />
                 <Option value="america" label="America" />

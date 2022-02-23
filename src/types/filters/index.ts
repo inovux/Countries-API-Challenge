@@ -1,4 +1,4 @@
 export interface ICountryFilter {
-    region?: string[]
+    region?: string
     search?: string
 }
