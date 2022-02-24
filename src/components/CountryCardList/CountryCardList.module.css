@@ -14,3 +14,21 @@
 .cardContainer {
     height: 100%;
 }
+
+@media screen and (max-width: 960px) {
+    .item {
+        flex-basis: 31%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .item {
+        flex-basis: 48%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .item {
+        flex-basis: 100%;
+    }
+}
