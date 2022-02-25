@@ -40,3 +40,13 @@
     /* calculated position from top based on padding top and bottom + 2 px border + font-size */
     top: calc(((var(--paddingBase) * 2) + 2px + 1em) + 6px);
 }
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    .selectContainer {
+        width: 100% !important;
+    }
+}

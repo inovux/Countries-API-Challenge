@@ -8,3 +8,25 @@
 .searchContainer {
     width: 50%;
 }
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .selectContainer {
+        width: 100%;
+    }
+
+    .searchContainer,
+    .selectContainer {
+        padding: 5px 0;
+    }
+}

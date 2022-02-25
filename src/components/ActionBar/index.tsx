@@ -34,17 +34,19 @@ export const ActionBar: FC<IActionBar> = ({
                     value={searchValue}
                 />
             </div>
-            <Select
-                placeholder="Filter by Region"
-                onSelect={handleSelectRegion}
-                storeValue={regionValue}
-            >
-                <Option value="africa" label="Africa" />
-                <Option value="america" label="America" />
-                <Option value="asia" label="Asia" />
-                <Option value="europe" label="Europe" />
-                <Option value="oceania" label="Oceania" />
-            </Select>
+            <div className={styles.selectContainer}>
+                <Select
+                    placeholder="Filter by Region"
+                    onSelect={handleSelectRegion}
+                    storeValue={regionValue}
+                >
+                    <Option value="africa" label="Africa" />
+                    <Option value="america" label="America" />
+                    <Option value="asia" label="Asia" />
+                    <Option value="europe" label="Europe" />
+                    <Option value="oceania" label="Oceania" />
+                </Select>
+            </div>
         </div>
     )
 }
