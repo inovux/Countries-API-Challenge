@@ -33,6 +33,7 @@
 
 .optionsContainer {
     position: absolute;
+    width: 100%;
     background-color: var(--white);
     box-shadow: var(--shadowBase-light);
     border-radius: var(--radiusBase);
