@@ -1,2 +1,2 @@
-export { ICountry, ICurrency, ILanguage } from './countries'
+export { IApiCountry, ICurrency, ILanguage } from './countries'
 export { ICountryFilter } from './filters'
