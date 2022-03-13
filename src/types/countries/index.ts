@@ -16,7 +16,8 @@ export interface IFlags {
     png: string
 }
 
-export interface ICountry {
+export interface IApiCountry {
+    name: string
     capital: string
     currencies: ICurrency[]
     flags: IFlags
