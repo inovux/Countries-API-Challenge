@@ -1,9 +1,10 @@
-import { Card, ICountry } from '../CountryCard'
+import { Card } from '../CountryCard'
 
 import styles from './CountryCardList.module.css'
+import { IApiCountry } from '../../types/countries'
 
 interface ICountryCardList {
-    countries: ICountry[]
+    countries: IApiCountry[]
 }
 
 export const CountryCardList = ({ countries }: ICountryCardList) => {
@@ -14,12 +15,12 @@ export const CountryCardList = ({ countries }: ICountryCardList) => {
                     <div className={styles.item}>
                         <div className={styles.cardContainer}>
                             <Card
-                                country={country.country}
+                                country={country.name}
                                 capital={country.capital}
                                 region={country.region}
-                                flagUrl={country.flagUrl}
+                                flagUrl={country.flags.png}
                                 population={country.population}
-                                key={country.country}
+                                key={country.name}
                             />
                         </div>
                     </div>
