@@ -73,6 +73,7 @@ export const CountriesPage: FC = () => {
     const [countries, setCountries] = useState([])
 
     useEffect(() => {
+        dispatch(countryActions.get.started({}))
         countriesRequests.getCountries().then((data) => {
             setCountries(data as any)
         })
