@@ -12,7 +12,7 @@ export const CountryCardList = ({ countries }: ICountryCardList) => {
         <div className={styles.container}>
             {countries.map((country) => {
                 return (
-                    <div className={styles.item}>
+                    <div key={country.name} className={styles.item}>
                         <div className={styles.cardContainer}>
                             <Card
                                 country={country.name}
