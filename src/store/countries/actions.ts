@@ -1,5 +1,6 @@
 import actionCreatorFactory from 'typescript-fsa'
 import { IOption } from '../../components/Select/Option'
+import { IApiCountryView } from '../../types/countries'
 
 const actionCreator = actionCreatorFactory('countries')
 
@@ -11,7 +12,7 @@ export const countryActionsTypes = {
 
 export const countryActions = {
     selectRegion: actionCreator<IOption>(countryActionsTypes.SELECT_REGION),
-    get: actionCreator.async<any, any, any>(countryActionsTypes.GET),
+    get: actionCreator.async<{}, IApiCountryView, {}>(countryActionsTypes.GET),
     setSearch: actionCreator<{ search: string }>(
         countryActionsTypes.SET_SEARCH
     ),
