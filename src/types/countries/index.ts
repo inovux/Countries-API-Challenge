@@ -28,3 +28,5 @@ export interface IApiCountry {
     subregion: string
     topLevelDomain: string[]
 }
+
+export type IApiCountryView = IApiCountry[]
