@@ -4,7 +4,7 @@ import { Success } from 'typescript-fsa'
 import { countryActions } from './actions'
 import { countrySelectors } from './selectors'
 import { countriesRequests } from '../../api/countries'
-import { IApiCountry, ICountryFilter } from '../../types'
+import { IApiCountryView } from '../../types'
 
 function* filterRequest() {
     const state: ReturnType<typeof countrySelectors.filter> = yield select(
@@ -20,7 +20,7 @@ function* filterRequest() {
 
 function* getCountries(action: AnyAction) {
     try {
-        const data: Success<ICountryFilter, { data: IApiCountry[] }> =
+        const data: Success<{}, IApiCountryView> =
             yield countriesRequests.getCountries(action.payload)
 
         yield put(countryActions.get.done(data))

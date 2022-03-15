@@ -1,6 +1,6 @@
 import actionCreatorFactory from 'typescript-fsa'
 import { IOption } from '../../components/Select/Option'
-import { IApiCountryView } from '../../types/countries'
+import { IApiCountryView } from '../../types'
 
 const actionCreator = actionCreatorFactory('countries')
 

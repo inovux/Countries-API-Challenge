@@ -1,10 +1,10 @@
 import { Card } from '../CountryCard'
 
 import styles from './CountryCardList.module.css'
-import { IApiCountry } from '../../types/countries'
+import { IApiCountryView } from '../../types'
 
 interface ICountryCardList {
-    countries: IApiCountry[]
+    countries: IApiCountryView
 }
 
 export const CountryCardList = ({ countries }: ICountryCardList) => {
