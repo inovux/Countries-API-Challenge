@@ -1,6 +1,5 @@
 import { FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { CountryCardList } from '../../components/CountryCardList'
 import { IRootState } from '../../store/state'
 import { countryActions } from '../../store/countries/actions'
 
