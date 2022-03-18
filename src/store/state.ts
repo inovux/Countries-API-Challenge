@@ -6,7 +6,7 @@ export interface IRootState {
         isLoading: boolean
     }
     filters: {
-        countries?: ICountryFilter
+        countries: ICountryFilter
     }
 }
 
@@ -15,5 +15,10 @@ export const RootState: IRootState = {
         data: [],
         isLoading: false,
     },
-    filters: {},
+    filters: {
+        countries: {
+            search: undefined,
+            region: undefined,
+        },
+    },
 }
