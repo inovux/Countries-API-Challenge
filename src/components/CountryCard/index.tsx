@@ -25,9 +25,11 @@ export const Card = ({
             />
             <div className={styles.textContainer}>
                 <h2>{country}</h2>
-                <p>Population: {numberFormatter(population, 0)}</p>
-                <p>Region: {region}</p>
-                <p>Capital: {capital}</p>
+                <div>
+                    <p>Population: {numberFormatter(population, 0)}</p>
+                    <p>Region: {region}</p>
+                    <p>Capital: {capital}</p>
+                </div>
             </div>
         </div>
     )

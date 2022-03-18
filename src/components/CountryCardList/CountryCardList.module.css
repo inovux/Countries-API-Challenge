@@ -1,14 +1,14 @@
 .container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     column-gap: 2%;
     row-gap: 25px;
+    padding-bottom: calc(var(--paddingBase) * 2);
 }
 
 .item {
     flex-basis: 23%;
-    height: 100%;
 }
 
 .cardContainer {
