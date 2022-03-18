@@ -16,8 +16,13 @@ export interface IFlags {
     png: string
 }
 
+export interface ICountryName {
+    common: string
+    official: string
+}
+
 export interface IApiCountry {
-    name: string
+    name: ICountryName
     capital: string
     currencies: ICurrency[]
     flags: IFlags
@@ -27,6 +32,10 @@ export interface IApiCountry {
     region: string
     subregion: string
     topLevelDomain: string[]
+}
+
+export interface IGetByRegionApiParams {
+    region?: string
 }
 
 export type IApiCountryView = IApiCountry[]

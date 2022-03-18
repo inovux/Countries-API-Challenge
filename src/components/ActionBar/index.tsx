@@ -41,7 +41,7 @@ export const ActionBar: FC<IActionBar> = ({
                     storeValue={regionValue}
                 >
                     <Option value="africa" label="Africa" />
-                    <Option value="america" label="America" />
+                    <Option value="americas" label="Americas" />
                     <Option value="asia" label="Asia" />
                     <Option value="europe" label="Europe" />
                     <Option value="oceania" label="Oceania" />

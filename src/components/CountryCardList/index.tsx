@@ -12,15 +12,14 @@ export const CountryCardList = ({ countries }: ICountryCardList) => {
         <div className={styles.container}>
             {countries.map((country) => {
                 return (
-                    <div key={country.name} className={styles.item}>
+                    <div key={country.name.official} className={styles.item}>
                         <div className={styles.cardContainer}>
                             <Card
-                                country={country.name}
+                                country={country.name.official}
                                 capital={country.capital}
                                 region={country.region}
                                 flagUrl={country.flags.png}
                                 population={country.population}
-                                key={country.name}
                             />
                         </div>
                     </div>
