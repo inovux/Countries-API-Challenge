@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { IRootState } from '../../store/state'
 import { countryActions } from '../../store/countries/actions'
 import { CountryCardList } from '../../components/CountryCardList'
+import { Loader } from '../../components/Loader'
 
 export const CountriesContainer: FC = () => {
     const dispatch = useDispatch()
@@ -15,7 +16,7 @@ export const CountriesContainer: FC = () => {
     }, [])
 
     if (isLoading || !data.length) {
-        return <div>Loading...</div>
+        return <Loader />
     }
 
     return <CountryCardList countries={data} />
