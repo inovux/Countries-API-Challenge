@@ -41,6 +41,17 @@ module.exports = ({ preset = '' }, { mode }) => {
                         exclude: /node_modules/,
                         use: 'babel-loader',
                     },
+                    {
+                        test: /\.(png|jpg|gif)$/i,
+                        use: [
+                            {
+                                loader: 'url-loader',
+                                options: {
+                                    limit: false,
+                                },
+                            },
+                        ],
+                    },
                 ],
             },
             plugins: [
