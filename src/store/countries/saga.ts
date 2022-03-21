@@ -4,7 +4,11 @@ import { Success } from 'typescript-fsa'
 import { countryActions } from './actions'
 import { countrySelectors } from './selectors'
 import { countriesRequests } from '../../api/countries'
-import { IApiCountryView, IGetByRegionApiParams } from '../../types'
+import {
+    IApiCountryView,
+    IGetByNameApiParams,
+    IGetByRegionApiParams,
+} from '../../types'
 
 function* filterRequest() {
     const state: ReturnType<typeof countrySelectors.filter> = yield select(
@@ -47,11 +51,27 @@ function* getCountriesByRegion(action: AnyAction) {
     return action.payload
 }
 
+function* getCountriesByName(action: AnyAction) {
+    try {
+        const data: Success<IGetByNameApiParams, IApiCountryView> =
+            yield countriesRequests.getCountriesByName({
+                region: action.payload.name,
+            })
+
+        yield put(countryActions.getByName.done(data))
+    } catch (e: any) {
+        yield put(countryActions.getByName.failed(e))
+    }
+
+    return action.payload
+}
+
 export default function* rootSaga() {
     yield all([
         takeEvery(countryActions.get.started, getCountries),
         takeEvery(countryActions.selectRegion.type, filterRequest),
         takeEvery(countryActions.getByRegion.started, getCountriesByRegion),
+        takeEvery(countryActions.getByName.started, getCountriesByName),
         debounce(200, countryActions.setSearch.type, filterRequest),
     ])
 }
