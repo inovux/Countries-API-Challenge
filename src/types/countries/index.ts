@@ -38,4 +38,8 @@ export interface IGetByRegionApiParams {
     region?: string
 }
 
+export interface IGetByNameApiParams {
+    name?: string
+}
+
 export type IApiCountryView = IApiCountry[]

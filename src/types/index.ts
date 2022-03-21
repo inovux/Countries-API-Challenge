@@ -4,5 +4,6 @@ export {
     ICurrency,
     ILanguage,
     IGetByRegionApiParams,
+    IGetByNameApiParams,
 } from './countries'
 export { ICountryFilter } from './filters'
