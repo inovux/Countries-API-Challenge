@@ -1,12 +1,17 @@
 import actionCreatorFactory from 'typescript-fsa'
 import { IOption } from '../../components/Select/Option'
-import { IApiCountryView, IGetByRegionApiParams } from '../../types'
+import {
+    IApiCountryView,
+    IGetByNameApiParams,
+    IGetByRegionApiParams,
+} from '../../types'
 
 const actionCreator = actionCreatorFactory('countries')
 
 export const countryActionsTypes = {
     GET: 'GET',
     GET_BY_REGION: 'GET_BY_REGION',
+    GET_BY_NAME: 'GET_BY_NAME',
     SELECT_REGION: 'SELECT_REGION',
     SET_SEARCH: 'SET_SEARCH',
 }
@@ -22,4 +27,7 @@ export const countryActions = {
         IApiCountryView,
         {}
     >(countryActionsTypes.GET_BY_REGION),
+    getByName: actionCreator.async<IGetByNameApiParams, IApiCountryView, {}>(
+        countryActionsTypes.GET_BY_NAME
+    ),
 }
