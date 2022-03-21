@@ -10,12 +10,14 @@ export const countriesReducer = (state = initialState, action: AnyAction) => {
     switch (action.type) {
         case countryActions.get.started.type:
         case countryActions.getByRegion.started.type:
+        case countryActions.getByName.started.type:
             return {
                 ...state,
                 isLoading: true,
             }
         case countryActions.get.done.type:
         case countryActions.getByRegion.done.type:
+        case countryActions.getByName.done.type:
             return {
                 ...state,
                 data: action.payload,
