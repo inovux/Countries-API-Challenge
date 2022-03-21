@@ -10,4 +10,8 @@ export const countriesRequests = {
         const response = await apiInstance.get(`/region/${params.region}`)
         return response.data
     },
+    getCountriesByName: async (params: any) => {
+        const response = await apiInstance.get(`/name/${params.name}`)
+        return response.data
+    },
 }
