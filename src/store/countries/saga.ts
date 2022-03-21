@@ -20,7 +20,13 @@ function* filterRequest() {
         name: state.search,
     }
 
-    yield put(countryActions.getByRegion.started(params))
+    if (params.region) {
+        yield put(countryActions.getByRegion.started(params))
+    } else if (params.name) {
+        yield put(countryActions.getByName.started(params))
+    } else {
+        yield put(countryActions.get.started({}))
+    }
 }
 
 function* getCountries(action: AnyAction) {
@@ -55,7 +61,7 @@ function* getCountriesByName(action: AnyAction) {
     try {
         const data: Success<IGetByNameApiParams, IApiCountryView> =
             yield countriesRequests.getCountriesByName({
-                region: action.payload.name,
+                name: action.payload.name,
             })
 
         yield put(countryActions.getByName.done(data))
@@ -72,6 +78,6 @@ export default function* rootSaga() {
         takeEvery(countryActions.selectRegion.type, filterRequest),
         takeEvery(countryActions.getByRegion.started, getCountriesByRegion),
         takeEvery(countryActions.getByName.started, getCountriesByName),
-        debounce(200, countryActions.setSearch.type, filterRequest),
+        debounce(500, countryActions.setSearch.type, filterRequest),
     ])
 }
