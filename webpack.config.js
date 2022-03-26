@@ -11,6 +11,9 @@ module.exports = ({ preset = '' }, { mode }) => {
     return merge(
         {
             mode,
+            devServer: {
+                historyApiFallback: true,
+            },
             resolve: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
             },
