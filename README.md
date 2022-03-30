@@ -2,6 +2,8 @@
 
 ### Scripts
 
+'yarn start' starts the application.
+
 ### Environment fields
 
 ### Demo
