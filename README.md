@@ -2,7 +2,7 @@
 
 ### Scripts
 
-'yarn start' starts the application.
+`yarn start` starts the application.
 
 ### Environment fields
 
@@ -12,3 +12,7 @@ You can visit the demo app at: [https://dazzling-carson-543c2c.netlify.app/](htt
 
 ### Todo
 
+[ ] Style `CountryPage`
+[ ] Hook up single country details API
+[ ] Add Redux data for country selected
+[ ] Add color themes
