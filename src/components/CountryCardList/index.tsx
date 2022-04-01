@@ -11,10 +11,16 @@ export const CountryCardList = ({ countries }: ICountryCardList) => {
     return (
         <div className={styles.container}>
             {countries.map((country) => {
+                const handleOnClick = (countryCode: string) => {
+                    console.log('navigate to ', countryCode)
+                }
+
                 return (
                     <div key={country.name.official} className={styles.item}>
                         <div className={styles.cardContainer}>
                             <Card
+                                onClick={handleOnClick}
+                                countryCode={country.cca2}
                                 country={country.name.official}
                                 capital={country.capital}
                                 region={country.region}

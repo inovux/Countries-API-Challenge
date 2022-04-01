@@ -3,6 +3,8 @@ import { numberFormatter } from '../../utils/numberFormatter'
 
 export interface ICountry {
     country: string
+    countryCode: string
+    onClick: (countryCode: string) => void
     population: number
     region: string
     capital: string
@@ -11,13 +13,19 @@ export interface ICountry {
 
 export const Card = ({
     country,
+    countryCode,
+    onClick,
     population,
     region,
     capital,
     flagUrl,
 }: ICountry) => {
+    const handleOnClick = () => {
+        onClick(countryCode)
+    }
+
     return (
-        <div className={styles.container}>
+        <div onClick={handleOnClick} className={styles.container}>
             <img
                 className={styles.flag}
                 src={flagUrl}
