@@ -23,6 +23,7 @@ export interface ICountryName {
 
 export interface IApiCountry {
     name: ICountryName
+    cca2: string
     capital: string
     currencies: ICurrency[]
     flags: IFlags
