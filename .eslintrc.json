@@ -40,6 +40,8 @@
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": ["error"],
         "default-param-last": "off",
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off"
     }
 }
