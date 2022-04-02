@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { Card } from '../CountryCard'
 
 import styles from './CountryCardList.module.css'
@@ -8,11 +9,13 @@ interface ICountryCardList {
 }
 
 export const CountryCardList = ({ countries }: ICountryCardList) => {
+    const navigate = useNavigate()
+
     return (
         <div className={styles.container}>
             {countries.map((country) => {
                 const handleOnClick = (countryCode: string) => {
-                    console.log('navigate to ', countryCode)
+                    navigate(`/country/${countryCode}`)
                 }
 
                 return (
