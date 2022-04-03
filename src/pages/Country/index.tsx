@@ -1,13 +1,18 @@
 import { FC } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { PageTemplate } from '../PageTemplate'
 
 export const CountryPage: FC = () => {
     const { code } = useParams()
+    const navigate = useNavigate()
+
+    const navigateBack = () => {
+        navigate('/')
+    }
 
     return (
         <PageTemplate>
-            <div>Back button</div>
+            <div onClick={navigateBack}>Back</div>
             <div>
                 <div>Flag</div>
                 <div>
