@@ -7,12 +7,15 @@ import { Loader } from '../../components/Loader'
 
 export const CountriesContainer: FC = () => {
     const dispatch = useDispatch()
+    const countries = useSelector((state: IRootState) => state.countries.data)
     const { data, isLoading } = useSelector(
         (state: IRootState) => state.countries
     )
 
     useEffect(() => {
-        dispatch(countryActions.get.started({}))
+        if (!countries.length) {
+            dispatch(countryActions.get.started({}))
+        }
     }, [])
 
     if (isLoading || !data.length) {
