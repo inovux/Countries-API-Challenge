@@ -1,0 +1,16 @@
+.container {
+    padding: calc(var(--paddingBase) / 2) var(--paddingBase);
+    border-radius: 5px;
+    box-shadow: var(--shadowBase-light);
+    border: none;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.text {
+    color: var(--dark-blue-1);
+}
