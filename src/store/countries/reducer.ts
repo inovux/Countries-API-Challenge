@@ -2,7 +2,7 @@ import { AnyAction } from 'redux'
 import { countryActions } from './actions'
 
 const initialState = {
-    data: {},
+    data: [],
     isLoading: false,
     error: {},
 }
