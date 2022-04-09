@@ -4,6 +4,7 @@ import { countryActions } from './actions'
 const initialState = {
     data: {},
     isLoading: false,
+    error: {},
 }
 
 export const countriesReducer = (state = initialState, action: AnyAction) => {
@@ -13,6 +14,7 @@ export const countriesReducer = (state = initialState, action: AnyAction) => {
         case countryActions.getByName.started.type:
             return {
                 ...state,
+                error: {},
                 isLoading: true,
             }
         case countryActions.get.done.type:
@@ -21,6 +23,16 @@ export const countriesReducer = (state = initialState, action: AnyAction) => {
             return {
                 ...state,
                 data: action.payload,
+                error: {},
+                isLoading: false,
+            }
+        case countryActions.get.failed.type:
+        case countryActions.getByRegion.failed.type:
+        case countryActions.getByName.failed.type:
+            return {
+                ...state,
+                data: {},
+                error: action.payload,
                 isLoading: false,
             }
         default:
