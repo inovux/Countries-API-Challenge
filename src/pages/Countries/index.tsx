@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { PageTemplate } from '../PageTemplate'
 import { ActionBar } from '../../components/ActionBar'
