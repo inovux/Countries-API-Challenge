@@ -8,7 +8,7 @@ import { Loader } from '../../components/Loader'
 export const CountriesContainer: FC = () => {
     const dispatch = useDispatch()
     const countries = useSelector((state: IRootState) => state.countries.data)
-    const { data, isLoading } = useSelector(
+    const { data, isLoading, error } = useSelector(
         (state: IRootState) => state.countries
     )
 
@@ -18,8 +18,12 @@ export const CountriesContainer: FC = () => {
         }
     }, [])
 
-    if (isLoading || !data.length) {
+    if (isLoading) {
         return <Loader />
+    }
+
+    if (error?.status === 404) {
+        return <div>No countries found</div>
     }
 
     return <CountryCardList countries={data} />

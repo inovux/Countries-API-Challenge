@@ -66,7 +66,7 @@ function* getCountriesByName(action: AnyAction) {
 
         yield put(countryActions.getByName.done(data))
     } catch (e: any) {
-        yield put(countryActions.getByName.failed(e))
+        yield put(countryActions.getByName.failed(e.response.data))
     }
 
     return action.payload

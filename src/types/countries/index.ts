@@ -47,8 +47,5 @@ export type IApiCountryView = IApiCountry[]
 
 export interface IApiCountryError {
     message: string
-    name: string
-    stack: string
-    config: any
     status: number
 }

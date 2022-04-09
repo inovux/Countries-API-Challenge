@@ -31,7 +31,7 @@ export const countriesReducer = (state = initialState, action: AnyAction) => {
         case countryActions.getByName.failed.type:
             return {
                 ...state,
-                data: {},
+                data: [],
                 error: action.payload,
                 isLoading: false,
             }
