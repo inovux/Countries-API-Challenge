@@ -11,8 +11,6 @@ interface ICountryCardList {
 export const CountryCardList = ({ countries }: ICountryCardList) => {
     const navigate = useNavigate()
 
-    console.log(countries)
-
     return (
         <div className={styles.container}>
             {countries.map((country) => {
