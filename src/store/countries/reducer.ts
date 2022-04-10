@@ -32,7 +32,7 @@ export const countriesReducer = (state = initialState, action: AnyAction) => {
             return {
                 ...state,
                 data: [],
-                error: action.payload,
+                error: action.payload.error,
                 isLoading: false,
             }
         default:
