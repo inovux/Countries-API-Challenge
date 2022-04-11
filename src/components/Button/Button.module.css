@@ -2,9 +2,15 @@
     padding: calc(var(--paddingBase) / 2) var(--paddingBase);
     border-radius: 5px;
     box-shadow: var(--shadowBase-light);
-    border: none;
+    border: 1px solid transparent;
+    color: var(--dark-blue-1);
     background-color: var(--white);
     cursor: pointer;
+}
+
+.container:hover {
+    color: var(--dark-blue-3);
+    border: 1px solid var(--medium-gray);
 }
 
 .icon {
