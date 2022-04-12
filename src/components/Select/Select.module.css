@@ -16,6 +16,10 @@
     box-shadow: var(--shadowBase-light);
 }
 
+.selectContainer:hover {
+    border: 2px solid var(--medium-gray);
+}
+
 .icon {
     position: absolute;
     right: var(--paddingBase);
@@ -28,7 +32,7 @@
 }
 
 .active {
-    border: 2px solid var(--dark-blue-1);
+    border: 2px solid var(--dark-blue-1) !important;
 }
 
 .optionsContainer {
