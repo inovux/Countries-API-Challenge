@@ -27,9 +27,9 @@ export const CountryPage: FC = () => {
                     />
                 </div>
                 <div className={styles.contentContainer}>
+                    <h2>Belgium</h2>
                     <div className={styles.contentInnerContainer}>
                         <div>
-                            <div>{code}</div>
                             <div>Native Name: </div>
                             <div>Population: </div>
                             <div>Region: </div>
