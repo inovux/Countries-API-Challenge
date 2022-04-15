@@ -19,7 +19,13 @@ export const CountryPage: FC = () => {
                 <Button onClick={navigateBack} text="Back" />
             </div>
             <div className={styles.container}>
-                <div className={styles.flagContainer}>Flag</div>
+                <div className={styles.flagContainer}>
+                    <img
+                        className={styles.flag}
+                        src="https://flagcdn.com/w320/py.png"
+                        alt="country flag"
+                    />
+                </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.contentInnerContainer}>
                         <div>
