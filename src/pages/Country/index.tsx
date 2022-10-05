@@ -1,13 +1,18 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { PageTemplate } from '../PageTemplate'
 import { Button } from '../../components/Button'
 
 import styles from './Country.module.css'
+import { countriesRequests } from '../../api/countries'
 
 export const CountryPage: FC = () => {
     const { code } = useParams()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        countriesRequests.getCountryByCode({ code })
+    }, [])
 
     const navigateBack = () => {
         navigate('/')
