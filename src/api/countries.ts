@@ -1,5 +1,6 @@
 import { apiInstance } from './index'
 import { IApiCountryView, IGetByRegionApiParams } from '../types'
+import { IGetByCountryCodeApiParams } from '../types/countries'
 
 export const countriesRequests = {
     getCountries: async (): Promise<IApiCountryView> => {
@@ -12,6 +13,10 @@ export const countriesRequests = {
     },
     getCountriesByName: async (params: any) => {
         const response = await apiInstance.get(`/name/${params.name}`)
+        return response.data
+    },
+    getCountryByCode: async (params: IGetByCountryCodeApiParams) => {
+        const response = await apiInstance.get(`/alpha/${params.code}`)
         return response.data
     },
 }
