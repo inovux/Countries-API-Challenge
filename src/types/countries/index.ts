@@ -43,6 +43,10 @@ export interface IGetByNameApiParams {
     name?: string
 }
 
+export interface IGetByCountryCodeApiParams {
+    code?: string
+}
+
 export type IApiCountryView = IApiCountry[]
 
 export interface IApiCountryError {
