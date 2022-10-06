@@ -3,7 +3,9 @@ import createSagaMiddleware from 'redux-saga'
 import { all } from 'redux-saga/effects'
 import { filtersReducer } from './filters'
 import countrySagas from './countries/saga'
+import countryDetailsSagas from './countryDetails/saga'
 import { countriesReducer } from './countries/reducer'
+import { countryDetailsReducer } from './countryDetails/reducer'
 
 const composeEnhancers =
     // @ts-ignore
@@ -15,7 +17,7 @@ const composeEnhancers =
         : compose
 
 function* rootSaga() {
-    yield all([countrySagas()])
+    yield all([countrySagas(), countryDetailsSagas()])
 }
 
 const sagaMiddleware = createSagaMiddleware()
@@ -25,7 +27,11 @@ const middleware = [sagaMiddleware]
 const enhancer = composeEnhancers(applyMiddleware(...middleware))
 
 export const store = createStore(
-    combineReducers({ countries: countriesReducer, filters: filtersReducer }),
+    combineReducers({
+        countries: countriesReducer,
+        filters: filtersReducer,
+        countryDetails: countryDetailsReducer,
+    }),
     enhancer
 )
 

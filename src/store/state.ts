@@ -1,4 +1,9 @@
-import { IApiCountryView, ICountryFilter, IApiCountryError } from '../types'
+import {
+    IApiCountryView,
+    ICountryFilter,
+    IApiCountryError,
+    IApiCountry,
+} from '../types'
 
 export interface IRootState {
     countries: {
@@ -8,6 +13,11 @@ export interface IRootState {
     }
     filters: {
         countries: ICountryFilter
+    }
+    countryDetails: {
+        data?: IApiCountry
+        isLoading: boolean
+        error?: IApiCountryError
     }
 }
 
@@ -22,5 +32,10 @@ export const RootState: IRootState = {
             search: undefined,
             region: undefined,
         },
+    },
+    countryDetails: {
+        data: undefined,
+        isLoading: false,
+        error: undefined,
     },
 }
