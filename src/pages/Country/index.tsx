@@ -1,17 +1,19 @@
 import { FC, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { PageTemplate } from '../PageTemplate'
 import { Button } from '../../components/Button'
 
 import styles from './Country.module.css'
-import { countriesRequests } from '../../api/countries'
+import { countryDetailsActions } from '../../store/countryDetails/actions'
 
 export const CountryPage: FC = () => {
+    const dispatch = useDispatch()
     const { code } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
-        countriesRequests.getCountryByCode({ code })
+        dispatch(countryDetailsActions.getByCountryCode.started({ code }))
     }, [])
 
     const navigateBack = () => {
