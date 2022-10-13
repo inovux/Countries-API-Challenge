@@ -6,6 +6,8 @@ import { Button } from '../../components/Button'
 
 import styles from './Country.module.css'
 import { countryDetailsActions } from '../../store/countryDetails/actions'
+import { Chip } from '../../components/Chip'
+import { Group } from '../../components/Group'
 
 export const CountryPage: FC = () => {
     const dispatch = useDispatch()
@@ -49,7 +51,12 @@ export const CountryPage: FC = () => {
                             <div>Language: {code}</div>
                         </div>
                     </div>
-                    <div>Border Countries: 1, 2, 3</div>
+                    <Group>
+                        Border Countries:
+                        <Chip text="France" />
+                        <Chip text="Belgium" />
+                        <Chip text="Germany" />
+                    </Group>
                 </div>
             </div>
         </PageTemplate>

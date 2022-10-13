@@ -1,0 +1,10 @@
+.container {
+    display: inline-flex;
+    padding: calc(var(--paddingBase) / 4) var(--paddingBase);
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: var(--shadowBase-light);
+    border: 1px solid transparent;
+    color: var(--dark-blue-1);
+    background-color: var(--white);
+}
