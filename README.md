@@ -12,8 +12,8 @@ You can visit the demo app at: [https://dazzling-carson-543c2c.netlify.app/](htt
 
 ### Todo
 
-- [ ] Style `CountryPage`
-- [ ] Hook up single country details API
-- [ ] Add Redux data for country selected
+- [x] Style `CountryPage`
+- [x] Hook up single country details API
+- [x] Add Redux data for country selected
 - [ ] Add color themes
-- [ ] Add tags component
+- [x] Add tags component
