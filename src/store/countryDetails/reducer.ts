@@ -2,7 +2,7 @@ import { AnyAction } from 'redux'
 import { countryDetailsActions } from './actions'
 
 const initialState = {
-    data: {},
+    data: undefined,
     isLoading: false,
     error: {},
 }
@@ -28,7 +28,7 @@ export const countryDetailsReducer = (
         case countryDetailsActions.getByCountryCode.failed.type:
             return {
                 ...state,
-                data: [],
+                data: undefined,
                 error: action.payload.error,
                 isLoading: false,
             }
