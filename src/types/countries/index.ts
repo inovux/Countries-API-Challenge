@@ -5,10 +5,7 @@ export interface ICurrency {
 }
 
 export interface ILanguage {
-    iso639_1: string
-    iso639_2: string
-    name: string
-    nativeName: string
+    [key: string]: string
 }
 
 export interface IFlags {
@@ -23,16 +20,17 @@ export interface ICountryName {
 
 export interface IApiCountry {
     name: ICountryName
+    borders: string[]
     cca2: string
     capital: string
     currencies: ICurrency[]
     flags: IFlags
-    languages: ILanguage[]
+    languages: ILanguage
     nativeLanguage: string
     population: number
     region: string
     subregion: string
-    topLevelDomain: string[]
+    tld: string
 }
 
 export interface IGetByRegionApiParams {
